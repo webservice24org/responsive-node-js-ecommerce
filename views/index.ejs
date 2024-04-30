@@ -1,0 +1,195 @@
+<%- include("layouts/header.ejs") %>
+<main>
+    <button id="openChatButton">
+      <img src="images/chat.png" alt="chat icon">
+    </button>
+    <div class="chat-container" id="chatContainer" style="display: none;">
+      <div class="message-container" id="messages">
+
+      </div>
+     
+      <div class="message">
+        <input type="text" placeholder="Type your message..." id="messageInput">
+        <button id="sendMessageButton" onclick="sendMessage()">Send</button>
+      </div>
+      <button id="closeChatButton">X</button>
+    </div>
+
+    
+  <div class="banner_section layout_padding">
+    <div class="container">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="banner_taital">Bag Collection <span style="color: #ecad15;">Offer 25%</span></h1>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/img-2.png"></div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="banner_taital">Winter Offer <span style="color: #ecad15;"> 2024 Collection</span></h1>
+
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/img-1.png"></div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/slider-3.png"></div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="banner_taital">New Collection <span style="color: #ecad15;">Sale 40%</span></h1>
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+          <i class=""><img src="images/left-icon.png"></i>
+        </a>
+        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+          <i class=""><img src="images/right-icon.png"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--banner section end -->
+  <!--about section start -->
+  <div class="about_section layout_padding">
+    <div class="container">
+      <div class="image_2"><img src="images/img-2.png"></div>
+      <h1 class="about_taital">About Our Shop</h1>
+      <p class="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+    </div>
+
+<div class="vegetables_section layout_padding">
+  <div class="container">
+      <h1 class="about_taital">Our Products</h1>
+      <p class="lorem_text">Reader will be distracted by the readable content of a</p>
+      <div class="vegetables_section_2 layout_padding">
+        <div class="row">
+            <% products.forEach(product => { %>
+                <div class="col-md-4">
+                    <div class="box_section">
+                        <div><a href="/product/<%= product.id %>"><img class="single_product_img" src="<%= product.image_path %>" alt="%= product.product_title %"></a></div>
+                        <h2 class="dolor_text"><%= product.product_price %> TK</h2>
+                        <a href="/product/<%= product.id %>"><h2 class="dolor_text"><%= product.product_title %></h2></a>
+                        
+                        <form action="/cart/add" method="POST" class="text-center">
+                          <input type="hidden" name="productId" value="<%= product.id %>">
+                          <button type="submit" class="btn btn-lg btn-dark">Add to Cart</button>
+                        </form>
+
+                    </div>
+                </div>
+            <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+
+  <!--choose section start -->
+  <div class="choose_section layout_padding">
+    <div class="container">
+      <div class="image_2"><img src="images/img-14.jpg"></div>
+      <h1 class="about_taital">Why Choose Us</h1>
+      <p class="lorem_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+    </div>
+  </div>
+  <!--choose section end -->
+  
+  <!--contact section start -->
+  <div class="contact_section layout_padding">
+    <div class="container">
+      <div class="image_2"><img src="images/img-2.png"></div>
+      <h1 class="about_taital">Contact Us</h1>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="mail_sectin">
+              <input type="text" class="email-bt" placeholder="Your Name" name="Name">
+              <input type="text" class="email-bt" placeholder="Email" name="Name">
+              <input type="text" class="email-bt" placeholder="Phone Number" name="Name">
+              <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
+              <div class="send_bt"><a href="#">Send</a></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="map_main">
+              <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.7057142835934!2d90.38719677434287!3d23.757871488491357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b94ba80adae5%3A0xcb4e9593680909f1!2sMicroWeb%20Technology%20Limited!5e0!3m2!1sen!2sbd!4v1714409168569!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const socket = io();
+  const messagesDiv = document.getElementById('messages');
+
+
+  function addClassesToMessages() {
+    var messages = messagesDiv.querySelectorAll('p');
+    messages.forEach(function(message, index) {
+      if (index % 2 === 0) {
+        message.classList.add('even');
+        message.classList.remove('odd');
+      } else {
+        message.classList.add('odd');
+        message.classList.remove('even');
+      }
+    });
+  }
+
+
+  socket.on('message', (message) => {
+    messagesDiv.innerHTML += `<p>${message}</p>`;
+    addClassesToMessages();
+  });
+
+
+  function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const message = messageInput.value;
+    socket.emit('message', message);
+    messageInput.value = '';
+  }
+
+  const openChatButton = document.getElementById('openChatButton');
+  const closeChatButton = document.getElementById('closeChatButton');
+  const chatContainer = document.getElementById('chatContainer');
+
+  openChatButton.addEventListener('click', () => {
+    chatContainer.style.display = 'block';
+  });
+
+  closeChatButton.addEventListener('click', () => {
+    chatContainer.style.display = 'none';
+  });
+
+  const sendMessageButton = document.getElementById('sendMessageButton');
+  sendMessageButton.addEventListener('click', sendMessage);
+});
+
+
+</script>
+</main>
+  <%- include("layouts/footer.ejs") %>

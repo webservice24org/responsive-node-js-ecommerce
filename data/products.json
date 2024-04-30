@@ -1,0 +1,23 @@
+[
+  {
+    "id": "PROD_1",
+    "product_title": "New Bag Collection",
+    "product_price": 25.5,
+    "product_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae illo suscipit officiis fugit possimus quos quaerat minima porro nihil eum labore, modi omnis totam facilis ex veniam. Est, ex pariatur! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae illo suscipit officiis fugit possimus quos quaerat minima porro nihil eum labore, modi omnis totam facilis ex veniam. Est, ex pariatur!",
+    "image_path": "/uploads/product-123.jpg"
+  },
+  {
+    "id": "PROD_2",
+    "product_title": "Best T-shirt",
+    "product_price": 50.51,
+    "product_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae illo suscipit officiis fugit possimus quos quaerat minima porro nihil eum labore, modi omnis totam facilis ex veniam. Est, ex pariatur!",
+    "image_path": "/uploads/product-456.jpg"
+  },
+  {
+    "id": "PROD_1714409494629_570",
+    "product_title": "Lorem ipsum fashion female2",
+    "product_price": "2050",
+    "product_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae illo suscipit officiis fugit possimus quos quaerat minima porro nihil eum labore, modi omnis totam facilis ex veniam. Est, ex pariatur!",
+    "image_path": "uploads/product-1714409494534.jpg"
+  }
+]
